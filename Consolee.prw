@@ -274,8 +274,7 @@ ElseIf cWord == "INFOUSER" .Or. cWord == "USERINFO" .Or. cWord == "INFO" .Or. cW
 	oMultExe:AppendText(Space(nSpace) + "Nome: "   		+ AllTrim(aDataUser[2]) + CLRF) 
 	oMultExe:AppendText(Space(nSpace) + "Departamento: "  	+ AllTrim(aDataUser[3]) + CLRF) 
 	oMultExe:AppendText(Space(nSpace) + "Cargo: " 		+ AllTrim(aDataUser[4]) + CLRF) 
-	oMultExe:AppendText(Space(nSpace) + "E-mail: " 		+ AllTrim(aDataUser[5]) + CLRF) 
-	oMultExe:AppendText(Space(nSpace) + "Token: " 		+ AllTrim(aDataUser[6]) + CLRF + " )" + CLRF + CLRF) 
+	oMultExe:AppendText(Space(nSpace) + "E-mail: " 		+ AllTrim(aDataUser[5]) + CLRF + " )" + CLRF + CLRF) 
 
 /*-----------+
 | FAZ LOGOFF |
