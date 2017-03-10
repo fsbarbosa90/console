@@ -6,7 +6,7 @@
   
 # Objetivo
   
-   Executar comandos e chamadas de procedimento de forma simples e fácil. Exemplo, digamos que não saiba como se comporta uma determinada função da totvs, ou o que ela vai trazer de retorno, basta colocar no console e executar, que o mesmo ira trazer as informações e exibir em tela, não importante o tipo de retorno do mesmo. Ex: PswRet().
+   Executar comandos e chamadas de procedimento de forma simples e fácil. Exemplo, digamos que não saiba como se comporta uma determinada função da totvs, ou o que ela vai trazer de retorno, basta colocar no console e executar, que o mesmo ira trazer as informações e exibir em tela, não importante o tipo de retorno do mesmo. Ex: <b>PswRet()</b>, ou <b>GetMv("MV_ESTNEG")</b>.
   
 # Comandos reservados
  
