@@ -16,12 +16,19 @@
 +-------------------------------------------------------------------------------+*/
 
 
-#Define EMPLOG		"01"		// EMPRESA
-#Define FILLOG 		"010101"	// FILIAL 
-#Define TAMCOM 		1024		// TAMANHO MAXIMO DO COMANDO
-#Define CLRF   		CHR(13)+CHR(10)	// QUEBRA DE LINHA
+#Define EMPLOG	"01"		// EMPRESA
+#Define FILLOG 	"010101"	// FILIAL 
+#Define TAMCOM 	1024		// TAMANHO MAXIMO DO COMANDO
+#Define CLRF   	CHR(13)+CHR(10)	// QUEBRA DE LINHA
 #Define TIMESHUT	"01:00:00"	// TEMPO DE INATIVIDADE PARA REALIZAR PARA FECHAR O CONSOLHE AUTOMATICAMENTE
 #Define TIMEWARN	"00:57:00"	// TEMPO QUE INICIA O AVISO NO CONSOLE QUE O MESMO SERA FECHADO POR INATIVIDADE
+
+// +--------------------------------------------------------------------------------+
+// | ATENÇÃO ATENÇÃO ATENÇÃO 								|
+// | NÃO ESQUECE DE INFORMAR O GRUPO DE USUARIO QUE IRAO FAZER LOGIN NO CONSOLE 	|
+// | NO MEU CASO EU COLOQUEI O GRUPO TI							|
+// +--------------------------------------------------------------------------------+
+#Define GRUPOPRD	"000018"      // GRUPO DE USUARIOS QUE PODE ACESSAR O CONSOLE
 
 User Function Consolee()
 ************************
@@ -70,7 +77,7 @@ If oCompany:Validate(.T.)
 		lRestart	:= .T.
 		aDataUser	:= {}
 	
-		If U_LOGINSYS("000018",@aDataUser)     			
+		If U_LOGINSYS(GRUPOPRD,@aDataUser)     			
 		
 			While lRestart
 				cTimeExc := Time()
