@@ -29,6 +29,12 @@
 
   <b>[F4]</b> Retorna os comandos executados de forma crescente(primeiro para o Ultimo) =  Ao pressionar a tecla F4, o console preenche automaticamente o primeiro comando executado, e cada vez que a mesma é pressionada ele ira avançando os comandos executados, até chegar no ultimo comando em tela, o console volta a trazer o primeiro executado, retornando assim o processo.
   
+
+# Executar o console 
+  
+    Para abrir o console, basta abri o seu SmartClient do prothues, e digitar na opção Programa inicial o seguinte comando <b>U_Consolee()</b>. A comunicação e o ambiente vão depender da configuração de seu ambiente! No meu caso Comunicação TCP, ambiente Producao
+  
+  
 # Melhorias futuras
   
     1) Criar uma opção aonde seja possível escolher a empresa/filial que deseja logar.
