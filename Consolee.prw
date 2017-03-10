@@ -202,6 +202,9 @@ If !Empty(cComando) .And. !ReservWord()
        	ElseIf Type("xValue") == "L"
        		xValue := IIF(xValue,"True","False")
        	
+       	ElseIf Type("xValue") == "A" .Or. Type("xValue") == "O" 
+       		xValue := FormatObj(xValue)
+       	
        	EndIf	  
        	
        	/*-------------------------------+
@@ -353,3 +356,37 @@ ElseIf cTimeStop > TIMEWARN
 EndIf
  
 Return
+
+
+// +-------------------------------------------+
+// | FORMATA O OBEJTO PARA SER EXIBIDO NA TELA |
+// +-------------------------------------------+
+Static Function FormatObj(oObj)
+*******************************
+Local cObjeto := ""
+Local aTransf	:= {}
+Local nSpace	:= 8
+
+	aAdd(aTransf,{"[...]",""})
+	aAdd(aTransf,{"ARRAY ","MATRIZ"})
+	aAdd(aTransf,{"OBJECT ","OBJETO"})
+	aAdd(aTransf,{"-> N ","-> NUMÉRICO"})
+	aAdd(aTransf,{"-> C ","-> CARACTER"})
+	aAdd(aTransf,{"-> D ","-> DATA"})
+	aAdd(aTransf,{" :","  "})
+ 
+// +--------------------------------------+
+// | ADCIONA OS ESPACOS A SEREM REMOVIDOS |
+// +--------------------------------------+
+For s := nSpace To 1 Step -1
+	aAdd(aTransf,{"(" + Space(s),"("})
+	aAdd(aTransf,{") [" + Space(s), ") ["})
+Next s
+
+cObjeto := VarInfo("",oObj,0,.F.,.F.)
+
+For i := 1 To Len(aTransf)
+	cObjeto := StrTran(cObjeto,aTransf[i][1],aTransf[i][2])
+Next i
+
+Return "                " + SubStr(cObjeto,9)
